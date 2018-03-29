@@ -1,6 +1,5 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -25,7 +24,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//var MongoURI = 'mongodb://lakshyagoel:<dbpassword>@ds227119.mlab.com:27119/mathworks';
 app.use(expressMongoDb(config.dbURI));
 app.use('/', index);
 app.use('/users', users);

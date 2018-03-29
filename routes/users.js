@@ -5,7 +5,9 @@ let ObjectId = require("mongodb").ObjectID;
 router.get("/", function(req, res, next) {
   let User = require("../model/user");
   User.find({}, function(err, users) {
-    res.send(JSON.stringify(users));
+    return users;
+  }).then(usr => {
+    res.send(usr);
   });
 });
 
