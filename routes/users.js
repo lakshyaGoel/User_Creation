@@ -26,7 +26,6 @@ router.get("/:username/", function(req, res, next) {
     .then(usr => {
       if (usr) {
         res.send({
-          username: usr.username,
           displayName: usr.displayName,
           department: usr.department
         });
