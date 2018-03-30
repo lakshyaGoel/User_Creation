@@ -7,7 +7,14 @@ router.get("/", function(req, res, next) {
   User.find({}, function(err, users) {
     return users;
   }).then(usr => {
-    res.send(usr);
+    let users = usr.map(val => {
+      return {
+        "Username" : val.name,
+        "Email" : val.email,
+        "Display Name": val.displayName
+      }
+    });
+    res.send(users);
   });
 });
 
