@@ -6,15 +6,12 @@ mongoose.connect(config.dbURI);
 
 var userSchema = new Schema({
     id: Schema.Types.ObjectId,
-    name: String,
-    email: {
+    username: {
         type:String,
         unique:true,
         required:true,
-        validator:function(v){
-        return /.+@.+\..+/.test(v)
-        }
     },
+    department: String,
     displayName: String
 });
 
