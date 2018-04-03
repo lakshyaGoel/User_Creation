@@ -19,3 +19,34 @@ Develop a web service with a RESTful API using either Node.js, Spring Boot, or a
 * DELETE /users/{username}: Remove an existing user or return status code 404 if not exists 
 
 * You can use a database as a backend or store the data in a file or just in memory.
+
+
+### Installation
+
+It requires [Node.js](https://nodejs.org/) to run.
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+$ cd mathworks
+$ npm install
+$ npm run dev
+```
+
+### MongoDb Setup
+
+* Get a [mlab](https://mlab.com) account.
+* Create a mongo deployment with the name `mathworks` with `AWS`.
+* Open and navigate to `Users` tab to create a new user.
+* There will be a mongoDB URI at the top of the page. It will be of the form `mongodb://<dbuser>:<dbpassword>@ds227119.mlab.com:27119/mathworks`.
+* Replace `dbuser` and `dbpassword` with the `username` and `password` created in 3rd step.
+* Paste this URI in the file `config.js`.
+
+### Running
+
+Use [Postman](https://www.getpostman.com/) to test.
+Verify the deployment in [Postman](https://www.getpostman.com/) using the following address with a `get` call:
+
+```sh
+https://localhost:3000/users
+```
